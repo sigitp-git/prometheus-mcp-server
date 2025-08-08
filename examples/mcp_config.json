@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "prometheus": {
+      "command": "python",
+      "args": [
+        "-m", 
+        "prometheus_mcp_server.main"
+      ],
+      "env": {
+        "AWS_REGION": "us-east-1"
+      }
+    }
+  }
+}

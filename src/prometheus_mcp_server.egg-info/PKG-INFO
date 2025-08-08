@@ -1,0 +1,112 @@
+Metadata-Version: 2.4
+Name: prometheus-mcp-server
+Version: 0.1.0
+Summary: MCP server for Amazon Managed Prometheus workspaces
+Home-page: https://github.com/yourusername/prometheus-mcp-server
+Author: Your Name
+Author-email: Your Name <your.email@example.com>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: fastmcp>=0.2.0
+Requires-Dist: boto3>=1.26.0
+Requires-Dist: requests>=2.28.0
+Requires-Dist: pydantic>=2.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: black>=22.0.0; extra == "dev"
+Requires-Dist: isort>=5.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Dynamic: author
+Dynamic: home-page
+Dynamic: requires-python
+
+# Amazon Managed Prometheus MCP Server
+
+An MCP (Model Context Protocol) server that provides access to Amazon Managed Prometheus workspaces using the FastMCP SDK.
+
+## Features
+
+- List Amazon Managed Prometheus workspaces
+- Get workspace details and configuration
+- Query metrics from Prometheus workspaces
+- Execute PromQL queries
+- Get workspace status and metadata
+
+## Installation
+
+1. Install dependencies:
+```bash
+pip install -e .
+```
+
+2. Configure AWS credentials (one of the following):
+   - AWS CLI: `aws configure`
+   - Environment variables: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`
+   - IAM roles (if running on EC2)
+
+## Usage
+
+### Running the MCP Server
+
+```bash
+prometheus-mcp-server
+```
+
+### Required AWS Permissions
+
+The server requires the following AWS permissions:
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "aps:ListWorkspaces",
+                "aps:DescribeWorkspace",
+                "aps:QueryMetrics"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
+
+## Available Tools
+
+- `list_workspaces`: List all Amazon Managed Prometheus workspaces
+- `get_workspace`: Get detailed information about a specific workspace
+- `query_metrics`: Execute PromQL queries against a workspace
+- `get_workspace_status`: Get the current status of a workspace
+
+## Configuration
+
+The server uses AWS SDK default configuration. You can override settings using:
+
+- Environment variables
+- AWS configuration files
+- IAM roles (recommended for production)
+
+## Development
+
+1. Install development dependencies:
+```bash
+pip install -e ".[dev]"
+```
+
+2. Run tests:
+```bash
+pytest
+```
+
+3. Format code:
+```bash
+black src/
+isort src/
+```
+
+4. Type checking:
+```bash
+mypy src/
+```

@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "prometheus-mcp-server": {
+      "command": "uv",
+      "args": [
+        "run",
+        "python",
+        "-m",
+        "prometheus_mcp_server.main"
+      ],
+      "cwd": "/Users/sigitp/Library/CloudStorage/OneDrive-amazon.com/TIBU/CSE/environment/mcp/fastmcp-starter/prometheus-mcp-server",
+      "env": {
+        "AWS_REGION": "us-east-1",
+        "PYTHONPATH": "/Users/sigitp/Library/CloudStorage/OneDrive-amazon.com/TIBU/CSE/environment/mcp/fastmcp-starter/prometheus-mcp-server/src"
+      }
+    }
+  }
+}
