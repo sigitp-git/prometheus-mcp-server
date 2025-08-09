@@ -2,6 +2,10 @@
 
 An MCP (Model Context Protocol) server that provides access to Amazon Managed Prometheus workspaces using the FastMCP SDK and `uv` for fast Python package management.
 
+<a href="https://glama.ai/mcp/servers/@sigitp-git/prometheus-mcp-server">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@sigitp-git/prometheus-mcp-server/badge" alt="Amazon Managed Prometheus Server MCP server" />
+</a>
+
 ## Features
 
 - List Amazon Managed Prometheus workspaces
