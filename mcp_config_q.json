@@ -8,10 +8,10 @@
         "-m",
         "prometheus_mcp_server.main"
       ],
-      "cwd": "/Users/sigitp/Library/CloudStorage/OneDrive-amazon.com/TIBU/CSE/environment/mcp/fastmcp-starter/prometheus-mcp-server",
+      "cwd": "/Users/sigitp/mcp/fastmcp-starter/prometheus-mcp-server",
       "env": {
         "AWS_REGION": "us-east-1",
-        "PYTHONPATH": "/Users/sigitp/Library/CloudStorage/OneDrive-amazon.com/TIBU/CSE/environment/mcp/fastmcp-starter/prometheus-mcp-server/src"
+        "PYTHONPATH": "/Users/sigitp/mcp/fastmcp-starter/prometheus-mcp-server/src"
       }
     }
   }

@@ -1,0 +1,22 @@
+{
+  "enabled": true,
+  "name": "Documentation Sync",
+  "description": "Monitors Python source files and configuration files for changes and automatically updates project documentation in README.md to keep it synchronized with code changes",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "src/**/*.py",
+      "tests/**/*.py",
+      "examples/**/*.py",
+      "*.py",
+      "pyproject.toml",
+      "requirements.txt",
+      "setup.py"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Source code or configuration files have been modified in this Python project. Please review the changes and update the README.md file to ensure the documentation accurately reflects the current codebase. Focus on updating any sections that describe functionality, API usage, installation instructions, or examples that may have changed. If there are significant architectural changes, also consider whether any additional documentation files need to be created or updated."
+  }
+}
